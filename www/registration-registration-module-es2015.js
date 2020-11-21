@@ -207,7 +207,7 @@ let RegistrationPage = class RegistrationPage {
             "poliza": String(this.patientRegister.value.poliza)
         };
         this.http.setDataSerializer('json');
-        this.http.post(_common_global_constants__WEBPACK_IMPORTED_MODULE_6__["GlobalConstants"].dbURL + 'patient/', regDoct, { 'Content-Type': 'application/json' })
+        this.http.post(_common_global_constants__WEBPACK_IMPORTED_MODULE_6__["GlobalConstants"].dbURL + 'pacientes/', regDoct, { 'Content-Type': 'application/json' })
             .then(data => {
             this.jsonobj = JSON.parse(data.data);
             this.presentToast('HTTP Request Success => uid ' + this.jsonobj.id);

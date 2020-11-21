@@ -1,4 +1,4 @@
-#Sat Nov 21 12:52:59 CST 2020
+#Sat Nov 21 15:09:23 CST 2020
 base.0=/Users/yolticcervantesgaleana/Projects/mediApp/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex
