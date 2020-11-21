@@ -107,7 +107,7 @@ export class RegistrationPage implements OnInit {
     };
 
     this.http.setDataSerializer('json');
-    this.http.post(GlobalConstants.dbURL + 'patient/', regDoct, { 'Content-Type': 'application/json' })
+    this.http.post(GlobalConstants.dbURL + 'pacientes/', regDoct, { 'Content-Type': 'application/json' })
         .then(data => {
           this.jsonobj = JSON.parse(data.data);
           this.presentToast('HTTP Request Success => uid ' + this.jsonobj.id);
