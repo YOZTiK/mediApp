@@ -497,6 +497,10 @@ var routes = [
         path: 'settings-patient',
         loadChildren: function () { return __webpack_require__.e(/*! import() | patient-settings-patient-settings-patient-module */ "patient-settings-patient-settings-patient-module").then(__webpack_require__.bind(null, /*! ./patient/settings-patient/settings-patient.module */ "./src/app/patient/settings-patient/settings-patient.module.ts")).then(function (m) { return m.SettingsPatientPageModule; }); }
     },
+    {
+        path: 'see-patient',
+        loadChildren: function () { return __webpack_require__.e(/*! import() | doctor-see-patient-see-patient-module */ "doctor-see-patient-see-patient-module").then(__webpack_require__.bind(null, /*! ./doctor/see-patient/see-patient.module */ "./src/app/doctor/see-patient/see-patient.module.ts")).then(function (m) { return m.SeePatientPageModule; }); }
+    },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -693,7 +697,7 @@ __webpack_require__.r(__webpack_exports__);
 var GlobalConstants = /** @class */ (function () {
     function GlobalConstants() {
     }
-    GlobalConstants.dbURL = 'https://ba6b4562ab4b.ngrok.io/';
+    GlobalConstants.dbURL = 'https://3689d2b41408.ngrok.io/';
     GlobalConstants.siteTitle = 'There is the URL for DB API endpoints';
     return GlobalConstants;
 }());

@@ -215,11 +215,43 @@ var RegistrationPage = /** @class */ (function () {
         this.presentToast('this.doctorRegister.value.name: \n' + this.doctorRegister.value.name +
             '\nthis.doctorRegister.value.email:\n' + this.doctorRegister.value.email +
             '\nthis.doctorRegister.value.type:\n' + 'doctor', 3000);
+        this.router.navigateByUrl('/home-doctor', { replaceUrl: true });
     };
     RegistrationPage.prototype.registrarPaciente = function () {
+        var _this = this;
+        var regDoct = {
+            "nombre": String(this.patientRegister.value.name) + ' ' + String(this.patientRegister.value.lastname),
+            "nss": String(this.patientRegister.value.nss),
+            "poliza": String(this.patientRegister.value.poliza)
+        };
+        this.http.setDataSerializer('json');
+        this.http.post(_common_global_constants__WEBPACK_IMPORTED_MODULE_6__["GlobalConstants"].dbURL + 'patient/', regDoct, { 'Content-Type': 'application/json' })
+            .then(function (data) {
+            _this.jsonobj = JSON.parse(data.data);
+            _this.presentToast('HTTP Request Success => uid ' + _this.jsonobj.id);
+        })
+            .catch(function (error) {
+            _this.presentToast('HTTP Request Error: ' + error.error);
+        });
+        var regLogin = {
+            "id": String(this.doctorRegister.value.email),
+            "contraseña": String(this.doctorRegister.value.password) + '',
+            "type": "patient",
+            "uid": String(this.jsonobj.id)
+        };
+        this.http.setDataSerializer('json');
+        this.http.post(_common_global_constants__WEBPACK_IMPORTED_MODULE_6__["GlobalConstants"].dbURL + 'login/', regLogin, { 'Content-Type': 'application/json' })
+            .then(function (data) {
+            _this.jsonobj = JSON.parse(data.data);
+            _this.presentToast('HTTP Request Success: ' + _this.jsonobj, 3000);
+        })
+            .catch(function (error) {
+            _this.presentToast('HTTP Request Error: ' + error.error);
+        });
         this.presentToast('this.doctorRegister.value.name: \n' + this.patientRegister.value.name +
             '\nthis.doctorRegister.value.email:\n' + this.patientRegister.value.email +
             '\nthis.doctorRegister.value.type:\n' + 'doctor', 3000);
+        this.router.navigateByUrl('/home-patient', { replaceUrl: true });
     };
     Object.defineProperty(RegistrationPage.prototype, "dname", {
         // Easy access for form fields
