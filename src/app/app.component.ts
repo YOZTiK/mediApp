@@ -21,7 +21,6 @@ export class AppComponent {
     private statusBar: StatusBar
   ) {
     console.log(GlobalConstants.dbURL);
-    this.sideMenu();
     this.initializeApp();
   }
 
@@ -32,44 +31,5 @@ export class AppComponent {
     });
   }
 
-  sideMenu() {
-    this.doctorsNavigate =
-        [
-          {
-            title : 'Busqueda',
-            url   : '/home-doctor',
-            icon  : 'home'
-          },
-          {
-            title : 'Recetar',
-            url   : '/prescribe',
-            icon  : 'chatboxes'
-          },
-          {
-            title : 'Configuraciones',
-            url   : '/settings-doctor',
-            icon  : 'settings'
-          },
-        ];
-
-    this.patientsNavigate =
-          [
-              {
-                  title : 'Vista general',
-                  url   : '/home-patient',
-                  icon  : 'home'
-              },
-              {
-                  title : 'Recetar',
-                  url   : '/prescribe',
-                  icon  : 'chatboxes'
-              },
-              {
-                  title : 'Configuraciones',
-                  url   : '/settings-patient',
-                  icon  : 'settings'
-              },
-          ];
-  }
 
 }

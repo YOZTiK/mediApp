@@ -9,12 +9,12 @@
 
   <button type="button" class="collapsible">Datos</button>
   <div class="content">
-    <data-title>Nombre: </data-title>
-    <data-content>Juan García<br></data-content>
-    <data-title>Póliza: </data-title>
-    <data-content>00000000<br></data-content>
-    <data-title>Número de Seguro Social: </data-title>
-    <data-content>123456789<br></data-content>
+    <h1>Nombre: </h1>
+    <h1>Juan García<br></h1>
+    <h1>Póliza: </h1>
+    <h1>00000000<br></h1>
+    <h1>Número de Seguro Social: </h1>
+    <h1>123456789<br></h1>
   </div>
 
   <button type="button" class="collapsible">Historial</button>
@@ -26,21 +26,4 @@
   <div class="content">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
   </div>
-
-  <script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      });
-    }
-  </script>
 </ion-content>

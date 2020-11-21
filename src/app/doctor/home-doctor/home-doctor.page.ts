@@ -12,4 +12,7 @@ export class HomeDoctorPage implements OnInit {
   ngOnInit() {
   }
 
+    submit() {
+        console.log('');
+    }
 }

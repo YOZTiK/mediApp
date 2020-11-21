@@ -6,4 +6,48 @@
 
 <ion-content>
 
+  <ion-card>
+    <img src="./madison.jpg" />
+    <ion-card-header>
+      <ion-card-subtitle>Bienvenido Doctor</ion-card-subtitle>
+      <ion-card-title>Es hora de curar</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-toolbar>
+        <ion-title>Searchbar</ion-title>
+      </ion-toolbar>
+      <ion-toolbar>
+        <ion-searchbar></ion-searchbar>
+      </ion-toolbar>
+
+      <!-- Round -->
+      <ion-button shape="round" [routerLink]="['/prescribe']">Crear Receta</ion-button>
+      <!-- Round -->
+      <ion-button shape="round" [routerLink]="['/see-patient']">Monstrar info</ion-button>
+
+      <ion-list>
+        <ion-item>Paciente 1</ion-item>
+        <ion-item>Paciente 2</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <script>
+    const searchbar = document.querySelector('ion-searchbar');
+    const items = Array.from(document.querySelector('ion-list').children);
+
+    searchbar.addEventListener('ionInput', handleInput);
+
+    function handleInput(event) {
+      const query = event.target.value.toLowerCase();
+      requestAnimationFrame(() => {
+        items.forEach(item => {
+          const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
+          item.style.display = shouldShow ? 'block' : 'none';
+        });
+      });
+    }
+  </script>
+
 </ion-content>
