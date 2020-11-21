@@ -41,6 +41,10 @@ const routes: Routes = [
     path: 'see-patient',
     loadChildren: () => import('./doctor/see-patient/see-patient.module').then( m => m.SeePatientPageModule)
   },
+  {
+    path: 'search-patient',
+    loadChildren: () => import('./doctor/search-patient/search-patient.module').then( m => m.SearchPatientPageModule)
+  },
 ];
 
 @NgModule({
