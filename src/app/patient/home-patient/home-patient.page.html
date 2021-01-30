@@ -6,4 +6,19 @@
 
 <ion-content>
 
+  <ion-card-header>
+    <img style="margin-top: -15%; margin-bottom: -15%;" src="../../assets/logo/mediApp.png" />
+    <ion-card-subtitle>Bienvenido {{datos.nombre}}!</ion-card-subtitle>
+    <ion-card-title>Es hora de sanar</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+
+  <div class="mx-auto" style="width: 75px;">
+    <button type="button" class="btn btn-danger btn-lg" [routerLink]="['/see-profile']">Perfil</button>
+  </div>
+
+  <div class="mx-auto" style="width: 95px;">
+    <button type="button" class="btn btn-danger btn-lg" [routerLink]="['/see-prescribe']">Recetas</button>
+  </div>
+
 </ion-content>

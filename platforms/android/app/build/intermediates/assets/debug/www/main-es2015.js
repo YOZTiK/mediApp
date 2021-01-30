@@ -436,7 +436,7 @@ module.exports = webpackAsyncContext;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\n  <ion-menu side=\"start\" menuId=\"first\" contentId=\"content1\">\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Navigate</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content>\n      <ion-list *ngFor=\"let pages of navigate\">\n        <ion-menu-toggle auto-hide=\"true\">\n          <ion-item [routerLink]=\"pages.url\" routerDirection=\"forward\">\n            <ion-icon [name]=\"pages.icon\" slot=\"start\"></ion-icon>\n            {{pages.title}}\n          </ion-item>\n        </ion-menu-toggle>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n  <ion-router-outlet></ion-router-outlet>\n</ion-app>\n"
+module.exports = "<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n</ion-app>\n"
 
 /***/ }),
 
@@ -489,12 +489,16 @@ const routes = [
         loadChildren: () => __webpack_require__.e(/*! import() | doctor-settings-doctor-settings-doctor-module */ "doctor-settings-doctor-settings-doctor-module").then(__webpack_require__.bind(null, /*! ./doctor/settings-doctor/settings-doctor.module */ "./src/app/doctor/settings-doctor/settings-doctor.module.ts")).then(m => m.SettingsDoctorPageModule)
     },
     {
-        path: 'settings-patient',
-        loadChildren: () => __webpack_require__.e(/*! import() | patient-settings-patient-settings-patient-module */ "patient-settings-patient-settings-patient-module").then(__webpack_require__.bind(null, /*! ./patient/settings-patient/settings-patient.module */ "./src/app/patient/settings-patient/settings-patient.module.ts")).then(m => m.SettingsPatientPageModule)
-    },
-    {
         path: 'see-patient',
         loadChildren: () => __webpack_require__.e(/*! import() | doctor-see-patient-see-patient-module */ "doctor-see-patient-see-patient-module").then(__webpack_require__.bind(null, /*! ./doctor/see-patient/see-patient.module */ "./src/app/doctor/see-patient/see-patient.module.ts")).then(m => m.SeePatientPageModule)
+    },
+    {
+        path: 'see-profile',
+        loadChildren: () => __webpack_require__.e(/*! import() | patient-see-profile-see-profile-module */ "patient-see-profile-see-profile-module").then(__webpack_require__.bind(null, /*! ./patient/see-profile/see-profile.module */ "./src/app/patient/see-profile/see-profile.module.ts")).then(m => m.SeeProfilePageModule)
+    },
+    {
+        path: 'see-prescribe',
+        loadChildren: () => __webpack_require__.e(/*! import() | patient-see-prescribe-see-prescribe-module */ "patient-see-prescribe-see-prescribe-module").then(__webpack_require__.bind(null, /*! ./patient/see-prescribe/see-prescribe.module */ "./src/app/patient/see-prescribe/see-prescribe.module.ts")).then(m => m.SeePrescribePageModule)
     },
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -552,7 +556,6 @@ let AppComponent = class AppComponent {
         this.statusBar = statusBar;
         this.title = _common_global_constants__WEBPACK_IMPORTED_MODULE_5__["GlobalConstants"].siteTitle;
         console.log(_common_global_constants__WEBPACK_IMPORTED_MODULE_5__["GlobalConstants"].dbURL);
-        this.sideMenu();
         this.initializeApp();
     }
     initializeApp() {
@@ -560,44 +563,6 @@ let AppComponent = class AppComponent {
             this.statusBar.styleDefault();
             this.splashScreen.hide();
         });
-    }
-    sideMenu() {
-        this.doctorsNavigate =
-            [
-                {
-                    title: 'Busqueda',
-                    url: '/home-doctor',
-                    icon: 'home'
-                },
-                {
-                    title: 'Recetar',
-                    url: '/prescribe',
-                    icon: 'chatboxes'
-                },
-                {
-                    title: 'Configuraciones',
-                    url: '/settings-doctor',
-                    icon: 'settings'
-                },
-            ];
-        this.patientsNavigate =
-            [
-                {
-                    title: 'Vista general',
-                    url: '/home-patient',
-                    icon: 'home'
-                },
-                {
-                    title: 'Recetar',
-                    url: '/prescribe',
-                    icon: 'chatboxes'
-                },
-                {
-                    title: 'Configuraciones',
-                    url: '/settings-patient',
-                    icon: 'settings'
-                },
-            ];
     }
 };
 AppComponent.ctorParameters = () => [

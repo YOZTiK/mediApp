@@ -200,9 +200,11 @@ var LoginPage = /** @class */ (function () {
             if (_this.credentials.value.password === _this.jsonobj.contraseña) {
                 _this.presentToast('Success', 1000);
                 if (_this.jsonobj.type === 'patient') {
+                    _common_global_constants__WEBPACK_IMPORTED_MODULE_6__["GlobalConstants"].patientProfile.uid = _this.jsonobj.uid;
                     _this.router.navigateByUrl('/home-patient', { replaceUrl: true });
                 }
                 else {
+                    _common_global_constants__WEBPACK_IMPORTED_MODULE_6__["GlobalConstants"].doctorProfile.uid = _this.jsonobj.uid;
                     _this.router.navigateByUrl('/home-doctor', { replaceUrl: true });
                 }
             }

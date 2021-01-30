@@ -144,8 +144,8 @@ let LoginPage = class LoginPage {
     presentToast(message = 'Alert in process.', duration = 1200) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             const toast = yield this.toastController.create({
-                message: message,
-                duration: duration
+                message,
+                duration
             });
             toast.present();
         });
@@ -173,9 +173,11 @@ let LoginPage = class LoginPage {
             if (this.credentials.value.password === this.jsonobj.contraseña) {
                 this.presentToast('Success', 1000);
                 if (this.jsonobj.type === 'patient') {
+                    _common_global_constants__WEBPACK_IMPORTED_MODULE_6__["GlobalConstants"].patientProfile.uid = this.jsonobj.uid;
                     this.router.navigateByUrl('/home-patient', { replaceUrl: true });
                 }
                 else {
+                    _common_global_constants__WEBPACK_IMPORTED_MODULE_6__["GlobalConstants"].doctorProfile.uid = this.jsonobj.uid;
                     this.router.navigateByUrl('/home-doctor', { replaceUrl: true });
                 }
             }

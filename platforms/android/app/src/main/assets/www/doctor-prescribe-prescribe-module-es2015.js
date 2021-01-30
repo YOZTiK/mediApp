@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<head>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n  <title>Alta de usuarios</title>\n  <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n  <link rel=\"stylesheet\" href=\"styles/login.css\">\n\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>\n  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>\n\n\n</head>\n\n<ion-header>\n  <ion-toolbar>\n    <ion-title>prescribe</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n  <div style=\" width:100%;  class=\"container\">\n\n  <div class=\"row justify-content-between mb-3\">\n\n\n    <div class=\"login-form\">\n      <form action=\"altauser\" method=\"post\" class=\"needs-validation\" novalidate>\n        <div class=\"avatar\"><i class=\"material-icons\">&#xe84e;</i></div>\n        <h2 class=\"text-center\">Crear receta Medica</h2>\n        <div class=\"form-group\">\n          <div class=\"input-group\">\n            <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>\n            <input type=\"text\"  class=\"form-control\" id=\"nombre\" placeholder=\"Nombre Paciente\" required/>\n            <div class=\"valid-feedback\">Valid.</div>\n            <div class=\"invalid-feedback\">Nombre requerido</div>\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <div class=\"input-group\">\n            <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-plus\"></i></span>\n            <input type=\"text\"  class=\"form-control\" id=\"NSS\" placeholder=\"Numero Seguro Social\" required/>\n            <div class=\"valid-feedback\">Valid.</div>\n            <div class=\"invalid-feedback\">Numero seguro social requerido</div>\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <div class=\"input-group\">\n            <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-asterisk\"></i></span>\n            <input type=\"text\"  class=\"form-control\" id=\"edad\" placeholder=\"Edad\" required/>\n            <div class=\"valid-feedback\">Valid.</div>\n            <div class=\"invalid-feedback\">Edad Requerida.</div>\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <div class=\"input-group\">\n            <span class=\"input-group-addon\"><i class=\"fa fa-lock\"></i></span>\n            <div class=\"form-check\">\n              <label class=\"form-check-label\">\n                <input type=\"radio\" class=\"form-check-input\" id=\"hombre\" name=\"sexo\"><br>Hombre\n              </label>\n            </div>\n            <div class=\"form-check\">\n              <label class=\"form-check-label\">\n                <input type=\"radio\" class=\"form-check-input\" id=\"mujer\" name=\"sexo\"><br>Mujer\n              </label>\n            </div>\n            <div class=\"valid-feedback\">Valid.</div>\n            <div class=\"invalid-feedback\">Sexo requerido.</div>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <div class=\"input-group\">\n            <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-leaf\"></i></span>\n            <input type=\"text\"  class=\"form-control\" id=\"alergias\" placeholder=\"Alergias\" />\n\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <div class=\"input-group\">\n            <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-resize-vertical\"></i></span>\n            <input type=\"text\"  class=\"form-control\" id=\"altura\" placeholder=\"Altura\" required/>\n            <div class=\"valid-feedback\">Valid.</div>\n            <div class=\"invalid-feedback\">Talla Requerida.</div>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <div class=\"input-group\">\n            <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-upload\"></i></span>\n            <input type=\"text\"  class=\"form-control\" id=\"peso\" placeholder=\"Peso\" required/>\n            <div class=\"valid-feedback\">Valid.</div>\n            <div class=\"invalid-feedback\">Peso Requerida.</div>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <div class=\"input-group\">\n            <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-tint\"></i></span>\n            <input type=\"text\"  class=\"form-control\" id=\"imc\" placeholder=\"IMC\" required/>\n            <div class=\"valid-feedback\">Valid.</div>\n            <div class=\"invalid-feedback\">IMC Requerida.</div>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <div class=\"input-group\">\n            <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-heart\"></i></span>\n            <input type=\"text\"  class=\"form-control\" id=\"presion\" placeholder=\"Presion\" required/>\n            <div class=\"valid-feedback\">Valid.</div>\n            <div class=\"invalid-feedback\">Presion Requerida.</div>\n          </div>\n        </div>\n\n\n        <div class=\"form-group\">\n          <label for=\"comment\">Diagnostico Medico:</label>\n          <textarea class=\"form-control\" rows=\"8\" id=\"diagnostico\" required></textarea>\n          <div class=\"valid-feedback\">Valid.</div>\n          <div class=\"invalid-feedback\">Diagnostico Requerido.</div>\n        </div>\n\n        <s:submit  value=\"Crear Diagnostico\" cssClass=\"btn btn-danger login-btn btn-block\"> </s:submit>\n      </form>\n    </div>\n\n\n\n  </div>\n  </div>\n  <script>\n    // Disable form submissions if there are invalid fields\n    (function() {\n      'use strict';\n      window.addEventListener('load', function() {\n        // Get the forms we want to add validation styles to\n        var forms = document.getElementsByClassName('needs-validation');\n        // Loop over them and prevent submission\n        var validation = Array.prototype.filter.call(forms, function(form) {\n          form.addEventListener('submit', function(event) {\n            if (form.checkValidity() === false) {\n              event.preventDefault();\n              event.stopPropagation();\n            }\n            form.classList.add('was-validated');\n          }, false);\n        });\n      }, false);\n    })();\n  </script>\n\n</ion-content>\n"
+module.exports = "<ion-content>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">Fecha</ion-label>\n    <ion-input type=\"text\" name=\"date\" [(ngModel)]=\"todo.fecha\" required></ion-input>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">Padecimiento</ion-label>\n    <ion-textarea [(ngModel)]=\"todo.padecimiento\" name=\"padecimiento\"></ion-textarea>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">Diagnostico</ion-label>\n    <ion-textarea [(ngModel)]=\"todo.diagnostico\" type=\"text\" name=\"mnombre\"></ion-textarea>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">Nombre Medicamento</ion-label>\n    <ion-input [(ngModel)]=\"todo.mnombre\" type=\"text\" name=\"mnombre\" required></ion-input>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">Hora Dosis</ion-label>\n    <ion-input [(ngModel)]=\"todo.mhora\" type=\"text\" name=\"mhora\" required></ion-input>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">Dosis</ion-label>\n    <ion-input [(ngModel)]=\"todo.mdosis\" type=\"text\" name=\"mdosis\" required></ion-input>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">Periodo</ion-label>\n    <ion-input [(ngModel)]=\"todo.mperiodo\" type=\"text\" name=\"mperiodo\" required></ion-input>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">NSS Paciente</ion-label>\n    <ion-input [(ngModel)]=\"todo.nsspaciente\" type=\"text\" name=\"nsspaciente\" required></ion-input>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">Cedula Doctor</ion-label>\n    <ion-input [(ngModel)]=\"todo.cdoctor\" type=\"text\" name=\"cdoctor\" required></ion-input>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">Nombre Paciente</ion-label>\n    <ion-input [(ngModel)]=\"todo.npaciente\" type=\"text\" name=\"npaciente\" required></ion-input>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">Edad Paciente</ion-label>\n    <ion-input [(ngModel)]=\"todo.edad\" type=\"text\" name=\"edad\" required></ion-input>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">Sexo Paciente</ion-label>\n    <ion-input [(ngModel)]=\"todo.sexo\" type=\"text\" name=\"sexo\" required></ion-input>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">Alergias</ion-label>\n    <ion-input [(ngModel)]=\"todo.alergias\" type=\"text\" name=\"alergias\" required></ion-input>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">Talla</ion-label>\n    <ion-input [(ngModel)]=\"todo.talla\" type=\"text\" name=\"talla\" required></ion-input>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">Peso</ion-label>\n    <ion-input [(ngModel)]=\"todo.peso\" type=\"text\" name=\"peso\" required></ion-input>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">IMC</ion-label>\n    <ion-input [(ngModel)]=\"todo.imc\" type=\"text\" name=\"imc\" required></ion-input>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">Temperatura</ion-label>\n    <ion-input [(ngModel)]=\"todo.temperatura\" type=\"text\" name=\"temperatura\" required></ion-input>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label position=\"floating\">Presión Arterial</ion-label>\n    <ion-input [(ngModel)]=\"todo.presion\" type=\"text\" name=\"presion\" required></ion-input>\n  </ion-item>\n\n  <ion-row>\n    <ion-col>\n      <ion-button type=\"submit\" color=\"danger\" expand=\"block\" (click)=\"registrarReceta()\">Registrar Receta</ion-button>\n    </ion-col>\n  </ion-row>\n\n</ion-content>\n"
 
 /***/ }),
 
@@ -80,7 +80,8 @@ PrescribePageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
-            _prescribe_routing_module__WEBPACK_IMPORTED_MODULE_5__["PrescribePageRoutingModule"]
+            _prescribe_routing_module__WEBPACK_IMPORTED_MODULE_5__["PrescribePageRoutingModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]
         ],
         declarations: [_prescribe_page__WEBPACK_IMPORTED_MODULE_6__["PrescribePage"]]
     })
@@ -113,20 +114,102 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrescribePage", function() { return PrescribePage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _common_global_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../common/global-constants */ "./src/app/common/global-constants.ts");
+/* harmony import */ var _ionic_native_http_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/http/ngx */ "./node_modules/@ionic-native/http/ngx/index.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+
+
+
 
 
 let PrescribePage = class PrescribePage {
-    constructor() { }
+    constructor(http, toastController) {
+        this.http = http;
+        this.toastController = toastController;
+        this.todo = {
+            fecha: undefined,
+            padecimiento: undefined,
+            diagnostico: undefined,
+            mnombre: undefined,
+            mhora: undefined,
+            mdosis: undefined,
+            mperiodo: undefined,
+            nsspaciente: undefined,
+            cdoctor: undefined,
+            npaciente: undefined,
+            edad: undefined,
+            sexo: undefined,
+            alergias: undefined,
+            talla: undefined,
+            peso: undefined,
+            imc: undefined,
+            temperatura: undefined,
+            presion: undefined
+        };
+    }
     ngOnInit() {
     }
+    presentToast(message = 'Alert in process.', duration = 1200) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const toast = yield this.toastController.create({
+                message,
+                duration
+            });
+            toast.present();
+        });
+    }
+    openDatePicker() {
+        console.log('');
+    }
+    registrarReceta() {
+        console.log(this.todo);
+        const regreceta = {
+            "fecha": this.todo.fecha,
+            "padecimiento": this.todo.padecimiento,
+            "diagnostico": this.todo.diagnostico,
+            "medicamento": [
+                {
+                    "nombre": this.todo.mnombre,
+                    "hora": this.todo.mhora,
+                    "dosis": this.todo.mdosis,
+                    "periodo": this.todo.mperiodo
+                }
+            ],
+            "nss_paciente": this.todo.nsspaciente,
+            "cedula_doctor": this.todo.cdoctor,
+            "Nombre completo": this.todo.npaciente,
+            "Edad": this.todo.edad,
+            "Sexo": this.todo.sexo,
+            "Alergias": this.todo.alergias,
+            "talla": this.todo.talla,
+            "peso": this.todo.peso,
+            "IMC": this.todo.imc,
+            "temperatura": this.todo.temperatura,
+            "presion arterial": this.todo.presion
+        };
+        this.http.setDataSerializer('json');
+        this.http.post(_common_global_constants__WEBPACK_IMPORTED_MODULE_2__["GlobalConstants"].dbURL + 'recetas/', regreceta, { 'Content-Type': 'application/json' })
+            .then(data => {
+            this.jsonobj = JSON.parse(data.data);
+            this.presentToast('Receta Registrada => uid ' + this.jsonobj.id);
+        })
+            .catch(error => {
+            this.presentToast('HTTP Request Error: ' + error.error);
+        });
+    }
 };
+PrescribePage.ctorParameters = () => [
+    { type: _ionic_native_http_ngx__WEBPACK_IMPORTED_MODULE_3__["HTTP"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"] }
+];
 PrescribePage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-prescribe',
         template: __webpack_require__(/*! raw-loader!./prescribe.page.html */ "./node_modules/raw-loader/index.js!./src/app/doctor/prescribe/prescribe.page.html"),
         styles: [__webpack_require__(/*! ./prescribe.page.scss */ "./src/app/doctor/prescribe/prescribe.page.scss")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_native_http_ngx__WEBPACK_IMPORTED_MODULE_3__["HTTP"],
+        _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"]])
 ], PrescribePage);
 
 

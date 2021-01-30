@@ -33,8 +33,8 @@ export class LoginPage implements OnInit {
 
   async presentToast(message: string = 'Alert in process.', duration: number = 1200 ) {
     const toast = await this.toastController.create({
-        message: message,
-        duration: duration
+        message,
+        duration
     });
     toast.present();
   }
@@ -61,12 +61,14 @@ export class LoginPage implements OnInit {
               console.log(data.data); // data received by server
               console.log(data.headers);*/
               if (this.credentials.value.password === this.jsonobj.contraseña) {
-                this.presentToast('Success', 1000);
-                if ( this.jsonobj.type === 'patient') {
+                  this.presentToast('Success', 1000);
+                  if ( this.jsonobj.type === 'patient') {
+                    GlobalConstants.patientProfile.uid = this.jsonobj.uid;
                     this.router.navigateByUrl('/home-patient', { replaceUrl: true });
-                } else {
+                  } else {
+                    GlobalConstants.doctorProfile.uid = this.jsonobj.uid;
                     this.router.navigateByUrl('/home-doctor', { replaceUrl: true });
-                }
+                  }
               } else {
                   this.presentToast('El usuario o contraseña es incorrecto.', 2000);
               }

@@ -441,7 +441,7 @@ module.exports = webpackAsyncContext;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\n  <ion-menu side=\"start\" menuId=\"first\" contentId=\"content1\">\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Navigate</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content>\n      <ion-list *ngFor=\"let pages of navigate\">\n        <ion-menu-toggle auto-hide=\"true\">\n          <ion-item [routerLink]=\"pages.url\" routerDirection=\"forward\">\n            <ion-icon [name]=\"pages.icon\" slot=\"start\"></ion-icon>\n            {{pages.title}}\n          </ion-item>\n        </ion-menu-toggle>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n  <ion-router-outlet></ion-router-outlet>\n</ion-app>\n"
+module.exports = "<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n</ion-app>\n"
 
 /***/ }),
 
@@ -494,12 +494,16 @@ var routes = [
         loadChildren: function () { return __webpack_require__.e(/*! import() | doctor-settings-doctor-settings-doctor-module */ "doctor-settings-doctor-settings-doctor-module").then(__webpack_require__.bind(null, /*! ./doctor/settings-doctor/settings-doctor.module */ "./src/app/doctor/settings-doctor/settings-doctor.module.ts")).then(function (m) { return m.SettingsDoctorPageModule; }); }
     },
     {
-        path: 'settings-patient',
-        loadChildren: function () { return __webpack_require__.e(/*! import() | patient-settings-patient-settings-patient-module */ "patient-settings-patient-settings-patient-module").then(__webpack_require__.bind(null, /*! ./patient/settings-patient/settings-patient.module */ "./src/app/patient/settings-patient/settings-patient.module.ts")).then(function (m) { return m.SettingsPatientPageModule; }); }
-    },
-    {
         path: 'see-patient',
         loadChildren: function () { return __webpack_require__.e(/*! import() | doctor-see-patient-see-patient-module */ "doctor-see-patient-see-patient-module").then(__webpack_require__.bind(null, /*! ./doctor/see-patient/see-patient.module */ "./src/app/doctor/see-patient/see-patient.module.ts")).then(function (m) { return m.SeePatientPageModule; }); }
+    },
+    {
+        path: 'see-profile',
+        loadChildren: function () { return __webpack_require__.e(/*! import() | patient-see-profile-see-profile-module */ "patient-see-profile-see-profile-module").then(__webpack_require__.bind(null, /*! ./patient/see-profile/see-profile.module */ "./src/app/patient/see-profile/see-profile.module.ts")).then(function (m) { return m.SeeProfilePageModule; }); }
+    },
+    {
+        path: 'see-prescribe',
+        loadChildren: function () { return __webpack_require__.e(/*! import() | patient-see-prescribe-see-prescribe-module */ "patient-see-prescribe-see-prescribe-module").then(__webpack_require__.bind(null, /*! ./patient/see-prescribe/see-prescribe.module */ "./src/app/patient/see-prescribe/see-prescribe.module.ts")).then(function (m) { return m.SeePrescribePageModule; }); }
     },
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -560,7 +564,6 @@ var AppComponent = /** @class */ (function () {
         this.statusBar = statusBar;
         this.title = _common_global_constants__WEBPACK_IMPORTED_MODULE_5__["GlobalConstants"].siteTitle;
         console.log(_common_global_constants__WEBPACK_IMPORTED_MODULE_5__["GlobalConstants"].dbURL);
-        this.sideMenu();
         this.initializeApp();
     }
     AppComponent.prototype.initializeApp = function () {
@@ -569,44 +572,6 @@ var AppComponent = /** @class */ (function () {
             _this.statusBar.styleDefault();
             _this.splashScreen.hide();
         });
-    };
-    AppComponent.prototype.sideMenu = function () {
-        this.doctorsNavigate =
-            [
-                {
-                    title: 'Busqueda',
-                    url: '/home-doctor',
-                    icon: 'home'
-                },
-                {
-                    title: 'Recetar',
-                    url: '/prescribe',
-                    icon: 'chatboxes'
-                },
-                {
-                    title: 'Configuraciones',
-                    url: '/settings-doctor',
-                    icon: 'settings'
-                },
-            ];
-        this.patientsNavigate =
-            [
-                {
-                    title: 'Vista general',
-                    url: '/home-patient',
-                    icon: 'home'
-                },
-                {
-                    title: 'Recetar',
-                    url: '/prescribe',
-                    icon: 'chatboxes'
-                },
-                {
-                    title: 'Configuraciones',
-                    url: '/settings-patient',
-                    icon: 'settings'
-                },
-            ];
     };
     AppComponent.ctorParameters = function () { return [
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"] },

@@ -34,12 +34,16 @@ const routes: Routes = [
     loadChildren: () => import('./doctor/settings-doctor/settings-doctor.module').then( m => m.SettingsDoctorPageModule)
   },
   {
-    path: 'settings-patient',
-    loadChildren: () => import('./patient/settings-patient/settings-patient.module').then( m => m.SettingsPatientPageModule)
-  },
-  {
     path: 'see-patient',
     loadChildren: () => import('./doctor/see-patient/see-patient.module').then( m => m.SeePatientPageModule)
+  },
+  {
+    path: 'see-profile',
+    loadChildren: () => import('./patient/see-profile/see-profile.module').then( m => m.SeeProfilePageModule)
+  },
+  {
+    path: 'see-prescribe',
+    loadChildren: () => import('./patient/see-prescribe/see-prescribe.module').then( m => m.SeePrescribePageModule)
   },
 ];
 
